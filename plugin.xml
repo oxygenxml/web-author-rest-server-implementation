@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin.dtd file is located in the OXYGEN_INSATALL_DIR/plugins directory -->
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+
+<plugin
+    class="ro.sync.exml.plugin.Plugin"
+
+    id="rest-api-demo-implementation"
+    name="REST API Demo Implementation"
+    description="A plugin for oXygen XML Web Author."
+    version="19.0-SNAPSHOT"
+    vendor="com.oxygenxml">
+
+  <runtime>
+    <librariesFolder name="lib" />
+    <library name="target/classes" />
+    <librariesFolder name="target/lib" />
+  </runtime>
+
+  <!-- The REST sever that implements the API. -->
+  <extension type="WebappServlet" class="com.oxygenxml.restapi.demo.DemoRestServer"/>
+  <!-- Configuration Extension -->
+  <extension type="WebappServlet" role="config"
+    class="com.oxygenxml.restapi.demo.DemoRestServerConfigExtension"/>
+  
+  
+  <!-- You can access static files at XML_WEB_AUTHOR/plugin-resources/demo-rest/ -->
+  <extension type="WebappStaticResourcesFolder" path="web/static/" href="demo-rest"/>
+</plugin>
