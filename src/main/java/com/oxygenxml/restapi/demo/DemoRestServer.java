@@ -35,10 +35,11 @@ public class DemoRestServer extends WebappServletPluginExtension {
     // Common filtering aplied to all requests.
     String docURL = URLUtil.decodeURIComponent(request.getParameter("url"));
     // if no URL is passed or it is not have the URL prefix that we expect.
-    if(docURL == null || !docURL.startsWith(restRepositoryURL)) {
-      if(!docURL.startsWith(restRepositoryURL)) {
-        IOUtils.write("The document URL should have the " + restRepositoryURL + " base.", response.getOutputStream());
-      }
+    if(docURL == null) {
+      response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+      return;
+    } else if(!docURL.startsWith(restRepositoryURL)) {
+      IOUtils.write("The document URL should have the " + restRepositoryURL + " base.", response.getOutputStream());
       response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
       return;
     } else {
@@ -88,11 +89,13 @@ public class DemoRestServer extends WebappServletPluginExtension {
       File[] files = docFile.listFiles();
       for(int i = 0; i < files.length; i++) {
         File file = files[i];
-        serializedFiles.append("{ 'name': '").append(file.getName())
-            .append("',").append(" 'folder': ").append(file.isDirectory())
-            .append(" }").append(i < files.length - 1 ? "," : "");
+        serializedFiles.append("{ \"name\": \"").append(file.getName()).append("\",")
+        .append(" \"folder\": ").append(file.isDirectory()).append(" }")
+        // add comma between the array elements.
+        .append(i < files.length - 1 ? "," : "");
       }
       serializedFiles.append("]");
+      
       IOUtils.write(serializedFiles.toString(), response.getOutputStream());
 
       break;
@@ -102,7 +105,7 @@ public class DemoRestServer extends WebappServletPluginExtension {
       .append("{\"type\": \"").append(docFile.isDirectory() ? "COLLECTION" : "FILE").append("\",")
       .append("\"rootUrl\": \"rest-").append(restRepositoryURL).append("\"")
       .append("}");
-      
+
       IOUtils.write(fileInfo.toString(), response.getOutputStream());
 
       break;
