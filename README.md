@@ -23,3 +23,13 @@ It has the following configuration options:
 Accessing the repository
 -----------------------
 In the REST file broser set as repository the URL *http://rest-repository/*.
+
+Copyright and License
+---------------------
+
+Copyright 2018 Syncro Soft SRL.
+
+* The source code of this plug-in published here is released under the [Apache License 2.0](https://github.com/oxygenxml/web-author-rest-server-implementation/blob/master/LICENSE)
+* The plugin code relies on the [Oxygen XML SDK](https://www.oxygenxml.com/oxygen_sdk.html) that is available under a commercial license (see more on [Oxygen XML SDK Licensing Policy](https://www.oxygenxml.com/oxygen_sdk/licensing.html))
+
+Questions? Contact `support@oxygenxml.com`.
