@@ -8,6 +8,16 @@
   <artifactId>rest-api-demo-implementation</artifactId>
   <version>19.0-SNAPSHOT</version>
 
+  <developers>
+    <developer>
+      <name>Mihai Coanda</name>
+      <email>mihai_coanda@sync.ro</email>
+      <roles>
+        <role>manager</role>
+      </roles>
+    </developer>
+  </developers>
+
   <properties>
     <oxygen.sdk.version>${project.version}</oxygen.sdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
