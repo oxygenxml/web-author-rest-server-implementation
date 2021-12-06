@@ -9,7 +9,7 @@
     name="REST API Demo Implementation"
     description="A plugin for oXygen XML Web Author."
     version="19.0-SNAPSHOT"
-    vendor="com.oxygenxml">
+    vendor="Syncro Soft">
 
   <runtime>
     <librariesFolder name="lib" />
