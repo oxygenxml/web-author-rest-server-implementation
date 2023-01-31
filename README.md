@@ -22,7 +22,7 @@ It has the following configuration options:
 
 Accessing the repository
 -----------------------
-In the REST file broser set as repository the URL *http://rest-repository/*.
+In the REST file broser set as repository the URL *WEB_AUTHOR_URL/plugins-dispatcher/demo-rest-server*.
 
 Copyright and License
 ---------------------
