@@ -20,7 +20,7 @@ import ro.sync.util.URLUtil;
 
 public class DemoRestServer extends WebappServletPluginExtension {
 
-  String restRepositoryURL = "http://rest-repository/";
+  String restRepositoryURL = "rest://rest-repository/";
 
   /**
    * REST end-points.
